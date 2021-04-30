@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+#slider {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-img {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+}
+
+.arrow-left, .arrow-right {
+    width: 30px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: brown;
+}
