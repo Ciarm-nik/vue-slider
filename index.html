@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/834474b273.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -17,13 +18,19 @@
 <body>
 
     <div id="slider">
-        <div class="box-img">
+        <div class="box-img" tabindex="-1" @keyup.left="prev" @keyup.right="next">
             <div class="arrow-left">
-                <i class="fas fa-arrow-left"></i>
+                <i @click="prev" class="fas fa-chevron-left"></i>
             </div>
-            <div class="cont-img"></div>
+            <div class="cont-img">
+                <img v-bind:src="imgs[indice_img]" alt="">
+                <div class="circ">
+                    <i v-for="(item, index) in imgs" class="fas fa-circle" @click.prevent="change(index)"></i>
+                </div>
+
+            </div>
             <div class="arrow-right">
-                <i class="fas fa-arrow-right"></i>
+                <i @click="next" class="fas fa-chevron-right"></i>
             </div>
         </div>
     </div>
